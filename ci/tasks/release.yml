@@ -1,13 +1,7 @@
----
 platform: linux
-
 image_resource:
   type: docker-image
-  source:
-    # Any image with git installed will do but we already use this one
-    # thus it will be cached
-    repository: openjdk
-    tag: 8-jdk
+  source: {repository: maven, tag: 3.3.9-jdk-8}
 
 inputs:
   - name: source

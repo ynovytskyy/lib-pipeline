@@ -25,5 +25,5 @@ pushd release-source
 
     NEXT_SNAPSHOT_VERSION=`mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive exec:exec`
     git add pom.xml
-    git commit -m "[ci skip] Bump version in pom.xml for next development iteration to ${NEXT_SNAPSHOT_VERSION}"
+    git commit -m "[ci skip] Setting pom.xml version for development to ${NEXT_SNAPSHOT_VERSION}"
 popd

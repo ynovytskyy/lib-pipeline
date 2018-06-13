@@ -6,7 +6,7 @@
 
   <groupId>org.yny.sample</groupId>
   <artifactId>lib-pipeline</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 
   <name>lib-pipeline</name>
   <!-- FIXME change it to the project's website -->

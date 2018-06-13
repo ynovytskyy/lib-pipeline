@@ -11,6 +11,6 @@ echo "M2 Cache folder is [${M2_CACHE}]"
 
 pushd source
 
-	./mvnw clean package #deploy
+	mvn clean package
 
 popd

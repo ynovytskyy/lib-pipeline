@@ -8,7 +8,7 @@ pushd release-source
     git config user.name "concourse"
 
     mvn versions:set -DremoveSnapshot=true
-    mvn clean package #deploy
+    mvn clean package
 
     RELEASE_VERSION=`mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive exec:exec`
     git add pom.xml

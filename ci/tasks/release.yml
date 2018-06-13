@@ -1,0 +1,21 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    # Any image with git installed will do but we already use this one
+    # thus it will be cached
+    repository: openjdk
+    tag: 8-jdk
+
+inputs:
+  - name: source
+
+outputs:
+  - name: release-source
+
+run:
+  path: /bin/bash
+  args:
+    - source/ci/tasks/release.sh

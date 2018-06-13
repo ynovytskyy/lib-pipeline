@@ -1,0 +1,25 @@
+resources:
+  - name: source
+    type: git
+    source:
+      uri: ((git-repo-url))
+      branch: ((git-release-branch))
+      private_key: ((git-private-key))
+
+jobs:
+  - name: create-snapshot
+    plan:
+    - get: source
+      trigger: true
+    - task: build
+      file: source/ci/tasks/build.yml
+      
+  - name: create-release
+    plan:
+    - get: source # To enable usage of this resource in shipit "passed" condition
+      passed: [create-snapshot]
+    - task: release
+      file: source/ci/tasks/release.yml
+    - put: source
+      params:
+        repository: release-source
